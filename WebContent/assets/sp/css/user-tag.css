@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+.c-t-items li > div {
+	padding:5px 0px;
+}
+
+.c-t-items .checked {
+	background-color:rgb(253, 245, 236);
+}

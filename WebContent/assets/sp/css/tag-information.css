@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+.ti-t-name {
+  font-size:18px;
+  padding: 0px 3px 8px;
+  border-bottom: 1px dotted #ccc;
+  margin-bottom: 4px;
+}
+
+.ti-register {
+  float:left;
+  padding-right:6px;
+}
+
+.ti-register dt,
+.ti-register dd {
+  float:left;
+  padding-right:4px;
+}
+

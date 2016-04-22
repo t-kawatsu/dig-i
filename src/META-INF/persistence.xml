@@ -1,0 +1,32 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+        version="2.0">
+    <persistence-unit name="com.dig_i.hibernate.jpa" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
+
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/dig-i" />
+            <property name="javax.persistence.jdbc.user" value="dig-i" />
+            <property name="javax.persistence.jdbc.password" value="jogojdigi" />
+
+            <!-- <property name="hibernate.connection.pool_size" value="15" /> -->
+            <property name="hibernate.c3p0.max_size" value="20" />
+            <property name="hibernate.c3p0.min_size" value="0" />
+            <property name="hibernate.c3p0.timeout" value="1800" />
+            <property name="hibernate.c3p0.preferredTestQuery" value="/* ping */ SELECT 1" />
+            <property name="hibernate.dialect" value="com.dig_i.front.hibernate.dialect.MySQLDialect" />
+            <property name="hibernate.current_session_context_class" value="thread" />
+            <!-- <property name="hibernate.cache.provider_class" value="org.hibernate.cache.internal.NoCacheProvider" /> -->
+            <property name="hibernate.cache.provider_class" value="org.hibernate.testing.cache.CachingRegionFactory" />
+            <property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.id.new_generator_mappings" value="true" />
+			<!-- <property name="hibernate.jdbc.batch_size" value="30" /> -->
+			<!-- <property name="hibernate.connection.autocommit" value="false" /> -->
+        </properties>
+
+    </persistence-unit>
+</persistence>

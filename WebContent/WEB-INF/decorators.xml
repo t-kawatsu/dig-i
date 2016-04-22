@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/WEB-INF/content">
+	<excludes>
+		<pattern>/assets/*</pattern>
+		<pattern>/*-ajax*</pattern>
+		<pattern>/batch/*</pattern>
+		<pattern>/api/*</pattern>
+	</excludes>
+    <decorator name="sp-basic-theme" page="sp/decorators/default.ftl">
+        <pattern>/sp/*</pattern>
+    </decorator>
+    <decorator name="fb-basic-theme" page="fb/decorators/default.ftl">
+        <pattern>/fb/*</pattern>
+    </decorator>
+    <decorator name="admin-basic-theme" page="admin/decorators/default.ftl">
+        <pattern>/admin/*</pattern>
+    </decorator>
+    <decorator name="default-basic-theme" page="front/decorators/default.ftl">
+        <pattern>/*</pattern>
+    </decorator>
+</decorators>

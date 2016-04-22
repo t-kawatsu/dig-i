@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+.status_con
+{
+  padding-left:70px;
+  padding-top:22px;
+  padding-bottom:10px;
+}
+
+.status
+{
+  line-height:1em;
+  padding-top:37px;
+  padding-right:16px;
+  display:block;
+  width:190px;
+  color:#888;
+  float:left;
+  text-align:left;
+}
+
+.status_code
+{
+  font-size:50px;
+}
+
+.status_message
+{
+  padding-top:50px;
+}
+
+.status_image
+{
+  display:block;
+  float:left;
+}
+
+.error_description
+{
+  padding:12px;
+  text-align:center;
+}

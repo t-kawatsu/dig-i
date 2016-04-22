@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="false" />
+	<constant name="struts.convention.relative.result.types" value="freemarker,dispatcher,velocity" />
+	<constant name="struts.custom.i18n.resources" value="global,global-message"/>
+	<constant name="struts.enable.SlashesInActionNames" value="true"/>
+	<constant name="struts.mapper.alwaysSelectFullNamespace" value="false"/>
+	<constant name="struts.patternMatcher" value="regex" />
+<!--
+	<constant name="struts.ui.templateDir" value="WEB-INF/content/theme" />
+-->
+	<constant name="struts.ui.theme" value="simple" />
+	
+	<constant name="struts.freemarker.manager.classname" value="com.dig_i.front.views.freemarker.CustomFreemarkerManager"/>
+	<!-- default update cache interval(5 seconds) -->
+	<constant name="struts.freemarker.templatesCache.updateDelay" value="6000" />
+	<!-- *DEPRECATED* this option will use a internal ConcurrentHashMap in FreemarkerTemplateEngine but not freemarker native cache -->
+	<!-- Settting devMode to true will disable cache and updateDelay immediately -->
+	<constant name="struts.freemarker.templatesCache" value="true" />
+
+	<package name="base" extends="struts-default" abstract="true">
+        <result-types>
+            <result-type name="json" class="com.dig_i.front.views.result.JSONResult"/>
+        </result-types>
+        
+		<interceptors>
+			<interceptor name="devide" class="com.dig_i.front.interceptor.DevideInterceptor">
+				<param name="noDevide">false</param>
+			</interceptor>
+			<interceptor name="entityManager" class="com.dig_i.front.interceptor.EntityManagerInterceptor"/>
+			<interceptor name="preventDoubleExecute" class="com.dig_i.front.interceptor.PreventDoubleExecuteInterceptor"/>
+			<interceptor name="loginAuthenticate" class="com.dig_i.front.interceptor.LoginAuthenticateInterceptor"/>
+			<interceptor name="exceptionAlertMail" class="com.dig_i.front.interceptor.ExceptionAlertMailInterceptor"/>
+			
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="annotationWorkflow"/>
+				<interceptor-ref name="defaultStack">
+					<param name="exception.logEnabled">true</param>
+     				<param name="exception.logLevel">ERROR</param>
+    			</interceptor-ref>
+				<!--<interceptor-ref name="entityManager"/>-->
+				<interceptor-ref name="devide"/>
+			</interceptor-stack>
+			
+			<interceptor-stack name="myAdminStack">
+				<interceptor-ref name="annotationWorkflow"/>
+				<interceptor-ref name="defaultStack">
+					<param name="exception.logEnabled">true</param>
+     				<param name="exception.logLevel">ERROR</param>
+    			</interceptor-ref>
+				<interceptor-ref name="loginAuthenticate"/>
+			</interceptor-stack>
+			
+			<interceptor-stack name="myBatchStack">
+				<interceptor-ref name="annotationWorkflow"/>
+				<interceptor-ref name="defaultStack">
+					<param name="exception.logEnabled">true</param>
+     				<param name="exception.logLevel">ERROR</param>
+    			</interceptor-ref>
+				<interceptor-ref name="exceptionAlertMail"/>
+				<interceptor-ref name="preventDoubleExecute"/>
+			</interceptor-stack>
+			
+			<interceptor-stack name="myApiStack">
+				<interceptor-ref name="annotationWorkflow"/>
+				<interceptor-ref name="defaultStack">
+					<param name="exception.logEnabled">true</param>
+     				<param name="exception.logLevel">ERROR</param>
+    			</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+		<global-results>
+			<result name="top" type="redirect">/</result>
+			<result name="sp-top" type="redirect">/sp/</result>
+			<result name="sp-login" type="redirect">/sp/user/login</result>
+			<result name="fb-top" type="redirect">/fb/</result>
+			<result name="admin-top" type="redirect">/admin/</result>
+			<result name="admin-login" type="redirect">/admin/user/login</result>
+			<result name="error-404" type="redirect">error/404</result>
+			<result name="error-500" type="redirect">error/500</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception" result="error-500"/>
+		</global-exception-mappings>
+
+	</package> 
+
+</struts>

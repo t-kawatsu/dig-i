@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+.t-c-menu-wrap {
+  box-shadow:0px 5px 10px rgb(219, 219, 219) inset;
+  padding-top:7px;
+  padding-bottom:6px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  width:90%;
+  margin:0px auto;
+}
+
+.t-c-menu {
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+
+.t-c-menu li {
+  text-align:center;
+  padding:7px 0px;
+  border:1px solid rgb(214, 214, 214);
+  margin-left:-1px;
+  width:47%;
+
+  background-image: -webkit-linear-gradient(top, #fcfcfc 0%, #e9e9e9 100%);
+  background-image: linear-gradient(to bottom, #fcfcfc 0%, #e9e9e9 100%);
+
+  box-shadow: 0px 1px 0px rgb(148, 148, 148);
+
+  text-shadow: 1px 1px 0px rgba(255,255,255,1);
+  -webkit-text-shadow: 1px 1px 0px rgba(255,255,255,1);
+}
+
+.t-c-menu li.on {
+  background-image: -webkit-linear-gradient(top, rgb(226, 226, 226) 0%, rgb(221, 221, 221) 100%);
+}
+
+.t-ptag {
+  border-radius: 8px 0px 0px 8px;
+  -webkit-border-radius: 8px 0px 0px 8px;
+}
+
+.t-ptags {
+  padding-bottom:6px;
+}
+
+.t-ntag {
+  border-left:1px solid #ccc !important;
+  -webkit-border-radius: 0px 8px 8px 0px;
+  border-radius: 0px 8px 8px 0px;
+}
+
+.t-sitems-w {
+  margin-bottom:6px; 
+  background-color:#fff; 
+  position:relative;
+  overflow:hidden;
+  box-shadow:0px -1px 2px #ccc inset;
+  padding-bottom:3px;
+}
+
+.t-sitems {
+  height:138px;
+  position:relative;
+  overflow:hidden;
+}
+
+.t-sitem {
+  float:left;
+  display:none;
+  height:100%;
+}
+
+.t-sitem-01-d {
+  font-weight:bold;
+  float:left;
+  padding-top:26px;
+  padding-left:7px;
+  line-height:21px;
+}
+
+.t-sitem-01-i {
+  float:right;
+  padding-top:26px;
+  padding-right:5px;
+}
+
+.t-sitem-01-i img {
+  display:block;
+}
+
+
+.t-sitem-02-d {
+  font-weight:bold;
+  float:left;
+  padding-top:42px;
+  padding-left:7px;
+  line-height:21px;
+}
+
+.t-sitem-02-i {
+  float:right;
+  padding-top:8px;
+}
+
+.t-sitem-02-i img {
+  display:block;
+}
+
+.t-sitem-03-d {
+  font-weight:bold;
+  float:left;
+  padding-top:28px;
+  padding-left:7px;
+  line-height:21px;
+}
+
+.t-sitem-03-i {
+  float:right;
+  padding-top:10px;
+  padding-right:5px;
+}
+
+.t-sitem-03-i img {
+  display:block;
+}
+
+.t-items-p-w {
+  font-size:11px;
+}
+
+.t-items-p-w .page-1 { color:#0e8cd8; }
+.t-items-p-w .page-2 { color:#e70c0c; }
+.t-items-p-w .page-3 { color:#f2c508; }
+
+.t-items-p-w .off {
+  color:#bbb;
+  text-shadow:0px -1px 1px #333;
+  font-size:10px;
+}
+
+.t-items-p-w li
+{
+  padding:0px 3px;
+}

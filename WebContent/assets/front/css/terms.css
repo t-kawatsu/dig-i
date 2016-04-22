@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+.terms-con {
+  width:640px;
+}
+
+.terms-con h2 {
+  font-size:21px;
+  padding-top:24px;
+  padding-bottom:13px;
+}
+
+.terms-con h3,
+.terms-con h3 {
+  font-size:21px;
+  padding-top:24px;
+  padding-bottom:13px;
+}
+
+.terms-con ol {
+  list-style-type:decimal;
+  padding-left:22px;
+}
+
+.terms-con ol ol {
+  list-style-type:lower-alpha;
+  list-style-position:inside;
+  padding-left:1em;
+}

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util" 
+       xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/cache 
+       http://www.springframework.org/schema/cache/spring-cache.xsd">
+       
+
+	<!-- <import resource="daos.xml"/> -->
+
+	<!-- define data access resources -->
+	<!--
+		 TODO LocalContainerEntityManagerFactoryBean
+			load-time weaving
+	-->
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+      <property name="persistenceUnitName" value="com.dig_i.hibernate.jpa"/>
+	</bean>
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+	  <property name="entityManagerFactory" ref="entityManagerFactory"/>
+	</bean>
+
+	<!-- post-processors for all standard config annotations -->
+	<!-- <context:annotation-config/> -->
+	<!-- <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/> -->
+	<context:component-scan base-package="com.dig_i"/>
+	
+	<util:properties id="appProperties" location="/WEB-INF/classes/global.properties"/>
+	
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	
+	<aop:aspectj-autoproxy proxy-target-class="true"/>
+
+	<!-- daos -->
+	<!-- <bean id="fbUserDao" class="com.dig_i.front.dao.FbUserDao" autowire="byName" /> -->
+
+	<!-- services -->
+
+	<!-- actions -->
+	<!-- 
+		Auto-wire by matching the name of the bean in Spring with the name of the property in your action.
+		by struts2-spring-plugin.jar
+	 -->
+
+	<!-- else -->
+	<bean id="simpleMailSender" class="com.dig_i.front.util.SimpleMailSender" scope="prototype">
+		<property name="host" value="mail.jogoj.com"/>
+		<property name="port" value="25"/>
+		<property name="user" value="t-kawatsu@jogoj.com"/>
+		<property name="password" value="tqjr4q"/>
+		<property name="fromDomain" value="dig-i.com"/>
+	</bean>
+</beans>

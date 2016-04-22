@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+.terms-con li {
+  list-style-type:decimal;
+  list-style-position:outside;
+  margin-left:1.5em;
+}
+
+.terms-con .sub-list li {
+  list-style-type:lower-alpha;
+  list-style-position:inside;
+  margin-left:0px;
+}
+

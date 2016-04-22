@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+.u-link-items
+{
+  display:block;
+  margin-bottom:16px;
+}
+
+.u-tmp-r-d
+{
+  padding-bottom:6px;
+}
+
+.ucc-tmp-d
+{
+  padding-bottom:6px;
+}
+
+.ucc-d
+{
+  padding-bottom:24px;
+  padding-top:6px;
+}
+
+.uc-expired-d
+{
+  margin-top:6px;
+  margin-bottom:18px;
+}
+
+.u-menu-btn-wrap
+{
+  margin-top:8px;
+  margin-bottom:18px;
+}
+
+.u-cndt
+{
+  padding-left:5px;
+  padding-top:4px;
+}
+
+.u-cndt dt
+{
+  border-bottom: 1px dotted #eee;
+  margin-bottom: 6px;
+}
+
+.u-cndt dd
+{
+  padding-bottom:12px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 6px;
+}
+
+.ut-r-tag-name
+{
+  text-align: center;
+  padding-bottom: 14px;
+}
+
+.ut-ptags-n
+{
+  float:left;
+}
+
+.ut-ptag-r-l
+{
+  float:right;
+  font-weight:normal;
+  padding-right:8px;
+  font-size:14px;
+}
+
+.u-btn-p-m-h
+{
+  margin:6px 0px;
+  margin-bottom:12px;
+}
+
+.c-l-fbu-create
+{
+  padding: 6px 12px;
+  display: inline-block;
+  -webkit-border-radius: 3px;
+  border-radius: 3px; 
+  border:1px solid #0000CD;
+
+  margin:12px 0px;
+}
+
+.link_fb_user_create a
+{
+  text-decoration:underline;
+
+}
